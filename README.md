@@ -5,17 +5,24 @@ This project is the Golang based backend for media sharing web project. [Media s
 <br> Deployed on http://34.73.107.83/api/v1
 ## Technology Used
 ### GCE
-
+GCE to host ElasticSearch, which is served as a NoSQL database and geo location based search engine for my project.
 ### ElasticSearch
+ElasticSearch as a NoSQL database to store data posted by users, and to search by Geo-index.
+### GCS
+GCS as Object Storage to store all media files posted by users.
 
 ### Google ML Engine
 
-### BigTable --> DataFlow --> BigQuery
-
+### BigTable 
+BigTable to store user post as backup and to pass data to BigQuery.
+### DataFlow 
+Use Google DataFlow to extract data from BigTable and Transform to BigQuery.
+### BigQuery
+Offline analysis
 ### GKE
+Build Go service to docker image and run the image on virual machines managed by GKE cluster.
 
-
-## Supported Endpoint
+## Supported Endpoints
 
 ### "/signup"
 For sign up to the web. 
